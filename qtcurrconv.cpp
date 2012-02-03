@@ -10,6 +10,9 @@ qtCurrconv::qtCurrconv(QWidget *parent)
     layout->addWidget(firstLabel);
     firstCurrencyField = new QLineEdit();
     firstCurrencyField->setValidator(validator);
+    firstCurrencyField->setMinimumHeight(40);
+    firstCurrencyField->setMaximumWidth(200);
+    firstCurrencyField->setStyleSheet("font-weight: bold; font-size: 24px;");
     connect(firstCurrencyField,SIGNAL(editingFinished()),this,SLOT(onFirstFieldEdit()));
     layout->addWidget(firstCurrencyField);
 
@@ -17,6 +20,9 @@ qtCurrconv::qtCurrconv(QWidget *parent)
     layout->addWidget(secondLabel);
     secondCurrencyField = new QLineEdit();
     secondCurrencyField->setValidator(validator);
+    secondCurrencyField->setMinimumHeight(40);
+    secondCurrencyField->setMaximumWidth(200);
+    secondCurrencyField->setStyleSheet("font-weight: bold; font-size: 24px;");
     layout->addWidget(secondCurrencyField);
     connect(secondCurrencyField,SIGNAL(editingFinished()),this,SLOT(onSecondFieldEdit()));
     this->setLayout(layout);
